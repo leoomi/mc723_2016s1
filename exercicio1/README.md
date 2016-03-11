@@ -5,15 +5,15 @@ Leo Yuuki Omori Omi
 Devido a falta de controle na alocação de recursos do sistema operacional para nosso programa, foram obtidos resultados variados em tempo real dentro de cada uma das opções de otimização, especialmente devido ao longo tempo de execução das funções de saída como mostrado pelo programa time, o que não é muito conclusivo. Em tempo real mostrado pelo programa, não é possível observar uma diferença significativa devido à precisão de 3 casas decimais dada como saída.
 Mas como algumas das opções priorizam tempo de execução, tamanha de código ou tempo de compilação, mas como estamos mais interessados em tempo de excecução, faz sentido usar o opção -O3 que deveria resultar no menor tempo de execução.
 
-'''
+```
 gcc primo.c -o primo -O3
-'''
+```
 
 2. O GCC possui opções para otimizar os código gerado para arquiteturas específicas com as opções mtune ou march, sendo que a segunda inclui a primeira. Podemos utilizar a opção native para otimizar o código para a mesma arquitetura do processador que está compilando o código.
 
-'''
+``` 
 gcc primo.c -o primo -O3 -march=native
-'''
+```
 
 Novamente, o mesmo problema do item 1 ocorreu, e não é possível observar uma diferença significativa utilizando esta otimização.
 
@@ -33,9 +33,9 @@ Com a mudança do programa fazendo com que o laço da função apenas varra núm
 4. Depurar um programa é o processo de procurar e resolver bugs ou defeitos no código. que impedem o programa a rodar corretamente.
 
 5. O GDB pode ser executado simplesmente escrevendo:
-'''
+```
 gdb primo
-'''
+```
 Escrevendo o nome do programa carrega o programa diretamente no depurador, sendo possível executar só o gdb e carregar o programa desejado.
 
 6. É possível utilizar um ambiente gráfico com o GDB utilizando o programa DDD, ou até executando o gdb dentro do emacs, que já dá uma ajuda visual a mais do que o gdb diretamente da shell.
@@ -43,9 +43,9 @@ Escrevendo o nome do programa carrega o programa diretamente no depurador, sendo
 7.Para descobrir a parte mais executada do programa, podemos utilizar o grpof, que consegue desenhar o perfil de gasto de tempo do programa e aponta as funções que gastam mais tempo. No caso deste programa, como esperado, a maior parte do tempo de execução é gasto na função primo().
 
 8. Primeiramente, para utilizar o gprof é necessário compilar o programa com a flag pg. Então, é necessário rodar o programa normalmente. Após ser executado, é possível obter os resultados utilizando, como exemplo este comando:
-'''
+```
  gprof primo > teste1
-'''
+```
 No caso, obtemos o resultado do programa primo, que foi armazenado no arquivo teste1.
 
 9. Para melhorar o programa, podemos utilizar o OpenMP, paralelizando principalmente o laço que chama função primo. Dividindo o trabalho em várias threads, foi possível observar uma significante redução do tempo de execuçao para n = 1000000, obtivemos um tempo de 1m55.796s para o programa sequencial e 37.648s. O que é uma melhora esperada com um processador de 4 núcleos.
