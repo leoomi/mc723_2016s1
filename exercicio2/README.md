@@ -1,5 +1,7 @@
 #Exercício 2
 Leo Yuuki Omori Omi RA: 138684
+##Observação
+Não foi possível formatar a saída do dinero corretamente, favor checar a versão de texto puro para melhor visualização dos resultados.
 
 ##Condições Experimentais
 Para esta atividade foi escolhido a simulção de um programa com dois níveis de cache, sendo 2 caches L1, um de instruções e outro de dados, e uma L2 unificada. Dos 46 traces fornecidos, foi escolhido o gzip, sendo que há traces das primeiras 2 bilhões de instruções(F2B) e de 2 bilhões de instruções após 50 bilhões de instruções(M2B), a F2B foi escolhida.
@@ -115,9 +117,9 @@ dineroIV -informat s -trname gzip_f2b -maxtrace 20 -l1-isize 16K -l1-ibsize 512 
 Que dá o seguinte resultado:
 '''
 l1-icache
- Metrics		      Total	      Instrn	       Data	       Read	      Write	       Misc
+ Metrics		              Total	      Instrn	       Data	       Read	      Write	       Misc
  -----------------	      ------	      ------	      ------	      ------	      ------	      ------
- Demand Fetches		   399999987	   399999987	           0	           0	           0	           0
+ Demand Fetches		      399999987	   399999987	           0	           0	           0	           0
   Fraction of total	      1.0000	      1.0000	      0.0000	      0.0000	      0.0000	      0.0000
 
  Demand Misses		         685	         685	           0	           0	           0	           0
@@ -126,22 +128,22 @@ l1-icache
 
 
 l1-dcache
- Metrics		      Total	      Instrn	       Data	       Read	      Write	       Misc
+ Metrics		               Total	      Instrn	       Data	       Read	      Write	       Misc
  -----------------	      ------	      ------	      ------	      ------	      ------	      ------
- Demand Fetches		   145757531	           0	   145757531	   108026579	    37730952	           0
+ Demand Fetches		     145757531	           0	   145757531	   108026579	    37730952	           0
   Fraction of total	      1.0000	      0.0000	      1.0000	      0.7411	      0.2589	      0.0000
 
- Demand Misses		     5036412	           0	     5036412	     4306258	      730154	           0
+ Demand Misses		        5036412	           0	     5036412	     4306258	      730154	           0
   Demand miss rate	      0.0346	      0.0000	      0.0346	      0.0399	      0.0194	      0.0000
 
 
 l2-ucache
- Metrics		      Total	      Instrn	       Data	       Read	      Write	       Misc
+ Metrics		               Total	      Instrn	       Data	       Read	      Write	       Misc
  -----------------	      ------	      ------	      ------	      ------	      ------	      ------
- Demand Fetches		    28864684	        2464	    28862220	    20145648	     8716572	           0
+ Demand Fetches		       28864684	        2464	    28862220	    20145648	     8716572	           0
   Fraction of total	      1.0000	      0.0001	      0.9999	      0.6979	      0.3020	      0.0000
 
- Demand Misses		    14171924	        2396	    14169528	    14093932	       75596	           0
+ Demand Misses		       14171924	        2396	    14169528	    14093932	       75596	           0
   Demand miss rate	      0.4910	      0.9724	      0.4909	      0.6996	      0.0087	      0.0000
 '''
 
