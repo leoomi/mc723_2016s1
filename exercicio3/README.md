@@ -11,8 +11,11 @@ Considerando meu RA (138684) foram executados os programas jpeg decoder(small), 
 https://docs.google.com/spreadsheets/d/1nSf2rfUsF8OfAOqdIUI6pw4Jrq2vpPT9JYmEYHdKJyY/edit#gid=0
 
 Obtemos então:
-|Programa           | ciclos       |
-| ----------------- |-------------:|
-|jpeg decoder(small)| 47876472     |
-|gsm coder(small)   | 33905889     |
-|gsm coder(larg)    | 1840374462   |
+
+
+
+| Programa          | Ciclos         | 
+| -------------     |:-------------:| 
+|jpeg decoder(small)| 47876472      | 
+|gsm coder(small)   | 33905889      |  
+| gsm coder(large)  | 1840374462      |  
